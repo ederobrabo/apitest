@@ -4,5 +4,5 @@ import com.eder.apitest.domain.user.User;
 
 import java.util.Date;
 
-public record PostDTO(String title, String content, Date createdAt, User user) {
+public record PostDTO(String title, String content, User user) {
 }

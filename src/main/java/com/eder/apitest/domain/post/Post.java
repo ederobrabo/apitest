@@ -20,8 +20,13 @@ public class Post {
     private UUID id;
     private String title;
     private String content;
-    private Date createdAt;
     @ManyToOne
     @JoinColumn(name = "userId", nullable = false)
     private User user;
+
+    public Post(PostDTO data) {
+        this.title = data.title();
+        this.content = data.content();
+        this.user = data.user();
+    }
 }

@@ -20,4 +20,11 @@ public class User {
     private String lastName;
     private String login;
     private String password;
+
+    public User(UserDTO data) {
+        this.firstName = data.firstName();
+        this.lastName = data.lastName();
+        this.login = data.login();
+        this.password = data.password();
+    }
 }
