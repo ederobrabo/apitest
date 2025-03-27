@@ -28,12 +28,12 @@ public class PostController {
     }
 
     @PostMapping
-    public ResponseEntity<Post> savePost(PostDTO data) {
+    public ResponseEntity<Post> savePost(@RequestBody PostDTO data) {
         return ResponseEntity.ok(postService.createPost(data));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Post> updatePost(@PathVariable UUID id, PostUpdateDTO data) throws Exception {
+    public ResponseEntity<Post> updatePost(@PathVariable UUID id, @RequestBody PostUpdateDTO data) throws Exception {
         return ResponseEntity.ok(postService.updatePost(id, data));
     }
 
